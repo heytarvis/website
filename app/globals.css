@@ -1,1 +1,5 @@
 @import "tailwindcss";
+
+.ck-react-wrapper {
+  height: 600px;
+}

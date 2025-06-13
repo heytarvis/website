@@ -5,6 +5,7 @@ import 'nextra-theme-docs/style.css'
 import './globals.css'
 import Image from "next/image";
 import '@tarvis/client/dist/index.css'
+import React from "react";
 
 export const metadata = {
   // Define your metadata here
@@ -20,7 +21,7 @@ const navbar = (
 )
 const footer = <Footer>MIT {new Date().getFullYear()} © Nextra.</Footer>
 
-export default async function RootLayout({ children }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
       // Not required, but good for SEO

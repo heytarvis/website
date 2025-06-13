@@ -3,7 +3,7 @@ import { useChat, ChatUI } from '@tarvis/react'
 
 export default function ChatApp() {
   const { chatApp } = useChat({
-    endpoint: 'http://localhost:3001/chat'
+    endpoint: 'http://localhost:3000/chat'
   })
 
   return <>
