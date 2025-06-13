@@ -3,6 +3,8 @@ import { Banner, Head } from 'nextra/components'
 import { getPageMap } from 'nextra/page-map'
 import 'nextra-theme-docs/style.css'
 import './globals.css'
+import Image from "next/image";
+import '@tarvis/client/dist/index.css'
 
 export const metadata = {
   // Define your metadata here
@@ -12,7 +14,7 @@ export const metadata = {
 // const banner = <Banner storageKey="some-key">Nextra 4.0 is released 🎉</Banner>
 const navbar = (
   <Navbar
-    logo={<b style={{ fontSize: '1.5rem' }}>Tarvis</b>}
+    logo={<><Image src={'/tarvis-logo.png'} width={120} height={80} alt={'Tarvis logo'} /></>}
     // ... Your additional navbar options
   />
 )
