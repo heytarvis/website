@@ -1,43 +1,65 @@
 import { NextRequest } from 'next/server'
 import type { OnChunkCallback, OnCompleteCallback, OnErrorCallback } from '@tarvis/server'
-import { handleChatKitClientInput } from '@tarvis/server'
+import { TarvisClient } from '@tarvis/server'
+import { mockModelClient } from "../../lib/mock-models/gpt35mock";
+
+const tarvis = new TarvisClient({
+  availableModels: [
+    {
+      name: 'Mock GPT-3.5',
+      description: 'Mock model simulating GPT-3.5 capabilities',
+      id: 'mock-gpt-3.5',
+      ModelInstance: mockModelClient
+    },
+    {
+      name: 'Mock Claude Sonnet',
+      description: 'Mock model simulating Claude Sonnet capabilities',
+      id: 'mock-claude-sonnet',
+      ModelInstance: mockModelClient
+    },
+    {
+      name: 'Mock Llama',
+      description: 'Mock Llama',
+      id: 'llama',
+      ModelInstance: mockModelClient
+    }
+  ]
+})
 
 export async function POST(req: NextRequest) {
-  const encoder = new TextEncoder()
-  const stream = new TransformStream()
-  const writer = stream.writable.getWriter()
-
-  const sendChunk = async (data: any) => {
-    await writer.write(encoder.encode(`${JSON.stringify(data)}\n\n`))
-  }
-
   try {
-    // Parse the request body
     const body = await req.json()
+    const encoder = new TextEncoder();
+    const stream = new ReadableStream({
+      async start(controller) {
+        const sendChunk = (data: any) => {
+          controller.enqueue(encoder.encode(data));
+        };
 
-    await handleChatKitClientInput(
-      body,
-      ((chunk) => {
-        sendChunk(chunk)
-      }) as OnChunkCallback,
-      ((complete) => {
-        sendChunk(complete)
-        writer.close()
-      }) as OnCompleteCallback,
-      ((error: Error) => {
-        sendChunk({ type: 'error', error: error.message })
-        writer.close()
-      }) as OnErrorCallback
-    )
+        try {
+          await tarvis.streamChatResponse(
+            body,
+            ((chunk) => {
+              console.log('sending chunk', chunk)
+              sendChunk(chunk);
+            }) as OnChunkCallback,
+            ((complete) => {
+              sendChunk(complete);
+              controller.close();
+            }) as OnCompleteCallback,
+            ((error) => {
+              sendChunk(error);
+              controller.close();
+            }) as OnErrorCallback
+          )
+        } catch (error) {
+          sendChunk({ type: 'error', error: 'Stream error' });
+          controller.close();
+        }
+      }
+    });
 
-    return new Response(stream.readable, {
-      headers: {
-        'Content-Type': 'text/event-stream',
-        'Cache-Control': 'no-cache',
-        'Connection': 'keep-alive',
-        'Access-Control-Allow-Origin': '*',
-      },
-    })
+    return new Response(stream)
   } catch (error) {
     console.error('Error handling chat request:', error)
     return new Response(

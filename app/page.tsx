@@ -20,8 +20,8 @@ export default function Page() {
             </span>
           </div>
           <h1 className="text-6xl md:text-7xl font-bold text-gray-900 mb-8 leading-tight">
-            AI powered websites
-            <span className="block text-blue-600 mt-2">without the hustle</span>
+            Your AI Chat, Your Stack
+            <span className="block text-blue-600 mt-2">One Library</span>
           </h1>
           <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
             A full-stack library for building AI chats with customizable frontend, robust backend, and seamless persistence layers.

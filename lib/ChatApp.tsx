@@ -1,9 +1,27 @@
 'use client';
-import { useChat, ChatUI } from '@tarvis/react'
+import { ChatUI, useChat } from '@tarvis/react'
 
 export default function ChatApp() {
   const { chatApp } = useChat({
-    endpoint: 'http://localhost:3000/chat'
+    endpoint: 'http://localhost:3000/chat',
+    model: 'mock-gpt-3.5',
+    availableModels: [
+      {
+        name: 'Mock GPT-3.5',
+        description: 'Mock model simulating GPT-3.5 capabilities',
+        id: 'mock-gpt-3.5',
+      },
+      {
+        name: 'Mock Claude Sonnet',
+        description: 'Mock model simulating Claude Sonnet capabilities',
+        id: 'mock-claude-sonnet',
+      },
+      {
+        name: 'Mock Llama',
+        description: 'Mock Llama',
+        id: 'llama',
+      }
+    ]
   })
 
   return <>
