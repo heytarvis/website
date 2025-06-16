@@ -37,7 +37,7 @@ export default function Page() {
               </svg>
             </Link>
             <Link
-              href="/github"
+              href="https://github.com/heytarvis/tarvis"
               className="group relative inline-flex items-center justify-center px-8 py-4 font-bold text-gray-700 transition-all duration-200 ease-in-out transform bg-white rounded-xl hover:scale-105 hover:shadow-lg border border-gray-200"
             >
               <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">

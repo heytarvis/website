@@ -18,8 +18,8 @@ importers:
         specifier: 0.1.0-beta.4
         version: 0.1.0-beta.4(@preact/signals@2.2.0(preact@10.26.9))(@tarvis/client@0.1.0-beta.7(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(@langchain/openai@0.5.13(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(ws@8.18.2))(@preact/signals@2.2.0(preact@10.26.9))(langchain@0.3.28(@langchain/anthropic@0.3.22(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(@langchain/google-genai@0.2.12(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(@langchain/groq@0.2.3(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(openai@4.104.0(ws@8.18.2)(zod@3.25.62))(ws@8.18.2))(preact@10.26.9))(preact@10.26.9)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@tarvis/server':
-        specifier: 0.1.0-beta.2
-        version: 0.1.0-beta.2(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(@langchain/groq@0.2.3(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(@langchain/openai@0.5.13(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(ws@8.18.2))(dotenv@16.5.0)(langchain@0.3.28(@langchain/anthropic@0.3.22(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(@langchain/google-genai@0.2.12(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(@langchain/groq@0.2.3(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(openai@4.104.0(ws@8.18.2)(zod@3.25.62))(ws@8.18.2))(ws@8.18.2)
+        specifier: 0.1.0-beta.3
+        version: 0.1.0-beta.3(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(@langchain/groq@0.2.3(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(@langchain/openai@0.5.13(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(ws@8.18.2))(dotenv@16.5.0)(langchain@0.3.28(@langchain/anthropic@0.3.22(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(@langchain/google-genai@0.2.12(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(@langchain/groq@0.2.3(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(openai@4.104.0(ws@8.18.2)(zod@3.25.62))(ws@8.18.2))(ws@8.18.2)
       next:
         specifier: ^15.3.3
         version: 15.3.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -658,8 +658,8 @@ packages:
       react: 16.7.0 || ^17 || ^18 || ^19
       react-dom: 16.7.0 || ^17 || ^18 || ^19
 
-  '@tarvis/server@0.1.0-beta.2':
-    resolution: {integrity: sha512-yJKqfCTcYLlScsrQu4MEs6MKmH0W3X+xFDHT+MD0gvXzKz7alPbdEREWoIzit3AL4k6nNxpW0AcgvW8Qn4c2ww==}
+  '@tarvis/server@0.1.0-beta.3':
+    resolution: {integrity: sha512-c34Eb3wX/bktcqi0YLxAAzhllLkIw0HM5uaZ0eY0sPOwjM+gSyKSldq3Ur6QTAWunMxIGbtSiTgVnH3cDRjpLg==}
     peerDependencies:
       '@langchain/core': ^0.3.57
       '@langchain/groq': ^0.2.2
@@ -3179,7 +3179,7 @@ snapshots:
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
 
-  '@tarvis/server@0.1.0-beta.2(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(@langchain/groq@0.2.3(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(@langchain/openai@0.5.13(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(ws@8.18.2))(dotenv@16.5.0)(langchain@0.3.28(@langchain/anthropic@0.3.22(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(@langchain/google-genai@0.2.12(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(@langchain/groq@0.2.3(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(openai@4.104.0(ws@8.18.2)(zod@3.25.62))(ws@8.18.2))(ws@8.18.2)':
+  '@tarvis/server@0.1.0-beta.3(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(@langchain/groq@0.2.3(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(@langchain/openai@0.5.13(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(ws@8.18.2))(dotenv@16.5.0)(langchain@0.3.28(@langchain/anthropic@0.3.22(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(@langchain/google-genai@0.2.12(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(@langchain/groq@0.2.3(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(openai@4.104.0(ws@8.18.2)(zod@3.25.62))(ws@8.18.2))(ws@8.18.2)':
     dependencies:
       '@langchain/anthropic': 0.3.22(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))
       '@langchain/core': 0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))

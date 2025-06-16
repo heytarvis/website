@@ -1,1 +1,135 @@
-# Docs
+# Tarvis
+
+Tarvis is a full-stack library for building AI capabilities into web apps. You can use it for:
+
+- Setting up a customizable chat interface.
+- Integrating with various standard APIs from LLM providers such as OpenAI, Anthropic, and Groq.
+- Integrating with a custom model of your choice.
+- Persisting conversations across user sessions.
+
+The backend is built on top of LangChain, in order to provide a standardized interface for working with LLMs, and to allow for easy integration with other LangChain components.
+
+## 🚀 Getting Started
+
+You can use the default chat UI, or customize the UI almost endlessly by injecting components written
+with the framework of your choice. For this guide, we will stick to vanilla JavaScript, but below follow
+links to the documentation for React and Vue.
+
+import {Cards} from 'nextra/components'
+
+<Cards num={2}>
+  <Cards.Card
+    arrow
+    title="React"
+    href="/docs/ui-frameworks/react"
+  ></Cards.Card>
+  <Cards.Card
+    arrow
+    title="Vue"
+    href="/docs/ui-frameworks/vue"
+  ></Cards.Card>
+</Cards>
+
+### Set up UI
+
+import { Tabs } from 'nextra/components'
+
+<Tabs items={['npm', 'pnpm', 'yarn']}>
+  <Tabs.Tab>
+    ```copy
+    npm i @tarvis/client
+    ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```copy
+    pnpm add @tarvis/client preact @preact/signals
+    ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```copy
+    yarn add @tarvis/client preact @preact/signals
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+```ts copy
+// chat-setup.ts
+
+import {
+  createChatUIContext,
+  ChatUI,
+  model_claude_3_5_sonnet,
+  model_llama_3_3_70b_versatile,
+  model_gpt_3_5_turbo,
+} from '@tarvis/client';
+
+import '@tarvis/client/dist/index.css'
+
+const config = {
+  endpoint: 'http://localhost:3000/chat', // This value needs to match the endpoint on your server, which exposes the tarvis server functionality.
+  theme: 'light',
+  onMessageComplete: (message, conversation) => {
+    console.log('Message completed:', message);
+    console.log('Current conversation:', conversation);
+  },
+  systemPrompt:
+    'You are a helpful AI assistant. You can use HTML formatting in your responses to create well-structured and visually appealing messages. You can use tags like <h1>, <h2>, <h3> for headings, <ul> and <ol> for lists, <li> for list items, <p> for paragraphs, <strong> and <em> for emphasis, <code> for code snippets, and <pre> for preformatted text. Always ensure your HTML is properly formatted and closed. Use appropriate spacing and structure to make the content easy to read.',
+  temperature: 0.5,
+  availableModels: [model_llama_3_3_70b_versatile, model_gpt_3_5_turbo, model_claude_3_5_sonnet],
+  model: model_gpt_3_5_turbo.id,
+};
+
+const ctx = createChatUIContext(config);
+
+const chatUI = new ChatUI(ctx);
+const chatEl = document.getElementById('app');
+chatUI.render(chatEl);
+```
+
+### Set up server client
+
+#### Install
+
+<Tabs items={['npm', 'pnpm', 'yarn']}>
+  <Tabs.Tab>
+    ```copy
+    npm i @tarvis/server
+    ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```copy
+    pnpm add @tarvis/server @langchain/core @langchain/groq @langchain/openai dotenv langchain
+    ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```copy
+    yarn add @tarvis/server @langchain/core @langchain/groq @langchain/openai dotenv langchain
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+#### Set environment veriables
+
+You only need to set up environment variables for the models you intend to use:
+
+```copy
+OPENAI_API_KEY="sk..."
+GROQ_API_KEY="gsk..."
+ANTHROPIC_API_KEY="sk..."
+```
+
+#### Set up Tarvis client
+
+import ExpressExample from '../../lib/code-examples/express-js.mdx'
+import NextjsExample from '../../lib/code-examples/nextjs-example.mdx'
+
+<Tabs items={['Express', 'Nextjs']}>
+  <Tabs.Tab>
+    <ExpressExample />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    <NextjsExample />
+  </Tabs.Tab>
+</Tabs>
+
+
