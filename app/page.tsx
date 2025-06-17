@@ -63,7 +63,7 @@ export default function Page() {
                 </svg>
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Frontend Flexibility</h3>
-              <p className="text-gray-600 leading-relaxed">Build with your favorite framework - Vue, React, or Angular. Fully customizable UI components with modern design patterns.</p>
+              <p className="text-gray-600 leading-relaxed">Build with your favorite framework - Vue, React, or Angular (coming soon). Fully customizable UI components with modern design patterns.</p>
             </div>
           </div>
 

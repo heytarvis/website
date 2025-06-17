@@ -7,6 +7,12 @@ const meta: MetaRecord = {
       layout: 'full',
     }
   },
+  'ui-frameworks': {
+    title: 'UI Frameworks',
+    theme: {
+      layout: 'default',
+    }
+  }
 }
 
 export default meta

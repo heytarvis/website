@@ -12,11 +12,11 @@ importers:
         specifier: ^4.1.10
         version: 4.1.10
       '@tarvis/client':
-        specifier: 0.1.0-beta.7
-        version: 0.1.0-beta.7(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(@langchain/openai@0.5.13(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(ws@8.18.2))(@preact/signals@2.2.0(preact@10.26.9))(langchain@0.3.28(@langchain/anthropic@0.3.22(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(@langchain/google-genai@0.2.12(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(@langchain/groq@0.2.3(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(openai@4.104.0(ws@8.18.2)(zod@3.25.62))(ws@8.18.2))(preact@10.26.9)
+        specifier: 0.1.0-beta.8
+        version: 0.1.0-beta.8(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(@langchain/openai@0.5.13(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(ws@8.18.2))(@preact/signals@2.2.0(preact@10.26.9))(langchain@0.3.28(@langchain/anthropic@0.3.22(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(@langchain/google-genai@0.2.12(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(@langchain/groq@0.2.3(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(openai@4.104.0(ws@8.18.2)(zod@3.25.62))(ws@8.18.2))(preact@10.26.9)
       '@tarvis/react':
-        specifier: 0.1.0-beta.4
-        version: 0.1.0-beta.4(@preact/signals@2.2.0(preact@10.26.9))(@tarvis/client@0.1.0-beta.7(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(@langchain/openai@0.5.13(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(ws@8.18.2))(@preact/signals@2.2.0(preact@10.26.9))(langchain@0.3.28(@langchain/anthropic@0.3.22(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(@langchain/google-genai@0.2.12(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(@langchain/groq@0.2.3(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(openai@4.104.0(ws@8.18.2)(zod@3.25.62))(ws@8.18.2))(preact@10.26.9))(preact@10.26.9)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        specifier: 0.1.0-beta.5
+        version: 0.1.0-beta.5(@tarvis/client@0.1.0-beta.8(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(@langchain/openai@0.5.13(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(ws@8.18.2))(@preact/signals@2.2.0(preact@10.26.9))(langchain@0.3.28(@langchain/anthropic@0.3.22(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(@langchain/google-genai@0.2.12(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(@langchain/groq@0.2.3(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(openai@4.104.0(ws@8.18.2)(zod@3.25.62))(ws@8.18.2))(preact@10.26.9))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@tarvis/server':
         specifier: 0.1.0-beta.3
         version: 0.1.0-beta.3(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(@langchain/groq@0.2.3(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(@langchain/openai@0.5.13(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(ws@8.18.2))(dotenv@16.5.0)(langchain@0.3.28(@langchain/anthropic@0.3.22(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(@langchain/google-genai@0.2.12(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(@langchain/groq@0.2.3(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(openai@4.104.0(ws@8.18.2)(zod@3.25.62))(ws@8.18.2))(ws@8.18.2)
@@ -640,8 +640,8 @@ packages:
   '@tanstack/virtual-core@3.13.10':
     resolution: {integrity: sha512-sPEDhXREou5HyZYqSWIqdU580rsF6FGeN7vpzijmP3KTiOGjOMZASz4Y6+QKjiFQwhWrR58OP8izYaNGVxvViA==}
 
-  '@tarvis/client@0.1.0-beta.7':
-    resolution: {integrity: sha512-yrWOntmcN83c+l4wPSCJpzLDp7dpTn/qhqLTF/g6ujqV2D261u85w7vqY/vk5+kZeLdo/LPfTuj2WI1F/D7pIw==}
+  '@tarvis/client@0.1.0-beta.8':
+    resolution: {integrity: sha512-iZf3B22HY2iKflSpe9YJHXFhha8/9cJW/Ik3O9P5//mGS+agTQwJ2ndlgEFEfaLXqj3Z2Ev3fYkYp/Y/ueiD0Q==}
     peerDependencies:
       '@langchain/core': ^0.3.57
       '@langchain/openai': ^0.5.11
@@ -649,12 +649,10 @@ packages:
       langchain: ^0.3.27
       preact: ^10.19.2
 
-  '@tarvis/react@0.1.0-beta.4':
-    resolution: {integrity: sha512-PSza+Qxq3PSY/b+Jh1zSoHxfwn9DANWyCfUPckjJsziu2AQbZbvXo/JIzrSmMzABoKTje3pWoGrKlyux8cv30w==}
+  '@tarvis/react@0.1.0-beta.5':
+    resolution: {integrity: sha512-Zub/5XUbj9KYNH4/HB2iwDlqSYQwb7/R3NdPy9HlnwuWMpLPtqZTMfrr/nI+40STozO2fjOiTPneT/iZKlOOXQ==}
     peerDependencies:
-      '@preact/signals': ^2.2.0
-      '@tarvis/client': ^0.1.0-beta.7
-      preact: ^10.26.8
+      '@tarvis/client': ^0.1.0-beta.8
       react: 16.7.0 || ^17 || ^18 || ^19
       react-dom: 16.7.0 || ^17 || ^18 || ^19
 
@@ -3163,7 +3161,7 @@ snapshots:
 
   '@tanstack/virtual-core@3.13.10': {}
 
-  '@tarvis/client@0.1.0-beta.7(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(@langchain/openai@0.5.13(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(ws@8.18.2))(@preact/signals@2.2.0(preact@10.26.9))(langchain@0.3.28(@langchain/anthropic@0.3.22(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(@langchain/google-genai@0.2.12(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(@langchain/groq@0.2.3(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(openai@4.104.0(ws@8.18.2)(zod@3.25.62))(ws@8.18.2))(preact@10.26.9)':
+  '@tarvis/client@0.1.0-beta.8(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(@langchain/openai@0.5.13(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(ws@8.18.2))(@preact/signals@2.2.0(preact@10.26.9))(langchain@0.3.28(@langchain/anthropic@0.3.22(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(@langchain/google-genai@0.2.12(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(@langchain/groq@0.2.3(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(openai@4.104.0(ws@8.18.2)(zod@3.25.62))(ws@8.18.2))(preact@10.26.9)':
     dependencies:
       '@langchain/core': 0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))
       '@langchain/openai': 0.5.13(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(ws@8.18.2)
@@ -3171,11 +3169,9 @@ snapshots:
       langchain: 0.3.28(@langchain/anthropic@0.3.22(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(@langchain/google-genai@0.2.12(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(@langchain/groq@0.2.3(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(openai@4.104.0(ws@8.18.2)(zod@3.25.62))(ws@8.18.2)
       preact: 10.26.9
 
-  '@tarvis/react@0.1.0-beta.4(@preact/signals@2.2.0(preact@10.26.9))(@tarvis/client@0.1.0-beta.7(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(@langchain/openai@0.5.13(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(ws@8.18.2))(@preact/signals@2.2.0(preact@10.26.9))(langchain@0.3.28(@langchain/anthropic@0.3.22(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(@langchain/google-genai@0.2.12(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(@langchain/groq@0.2.3(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(openai@4.104.0(ws@8.18.2)(zod@3.25.62))(ws@8.18.2))(preact@10.26.9))(preact@10.26.9)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+  '@tarvis/react@0.1.0-beta.5(@tarvis/client@0.1.0-beta.8(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(@langchain/openai@0.5.13(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(ws@8.18.2))(@preact/signals@2.2.0(preact@10.26.9))(langchain@0.3.28(@langchain/anthropic@0.3.22(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(@langchain/google-genai@0.2.12(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(@langchain/groq@0.2.3(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(openai@4.104.0(ws@8.18.2)(zod@3.25.62))(ws@8.18.2))(preact@10.26.9))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
-      '@preact/signals': 2.2.0(preact@10.26.9)
-      '@tarvis/client': 0.1.0-beta.7(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(@langchain/openai@0.5.13(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(ws@8.18.2))(@preact/signals@2.2.0(preact@10.26.9))(langchain@0.3.28(@langchain/anthropic@0.3.22(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(@langchain/google-genai@0.2.12(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(@langchain/groq@0.2.3(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(openai@4.104.0(ws@8.18.2)(zod@3.25.62))(ws@8.18.2))(preact@10.26.9)
-      preact: 10.26.9
+      '@tarvis/client': 0.1.0-beta.8(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(@langchain/openai@0.5.13(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(ws@8.18.2))(@preact/signals@2.2.0(preact@10.26.9))(langchain@0.3.28(@langchain/anthropic@0.3.22(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62)))(@langchain/google-genai@0.2.12(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(@langchain/groq@0.2.3(@langchain/core@0.3.58(openai@4.104.0(ws@8.18.2)(zod@3.25.62))))(openai@4.104.0(ws@8.18.2)(zod@3.25.62))(ws@8.18.2))(preact@10.26.9)
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
 

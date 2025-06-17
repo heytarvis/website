@@ -1,0 +1,145 @@
+# React Integration
+
+Tarvis provides first-class support for React applications. This guide will help you integrate Tarvis into your React project.
+
+> [!NOTE]
+>
+> Please note that this page only deals with setting up- and customizing the UI. For hooking it
+> up to your backend, please refer to the [guide for getting started](/docs).
+
+## Installation
+
+import { Tabs } from 'nextra/components';
+
+<Tabs items={['npm', 'pnpm', 'yarn']}>
+  <Tabs.Tab>
+    ```copy
+    npm i @tarvis/react @tarvis/client
+    ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```copy
+    pnpm add @tarvis/react @tarvis/client preact @preact/signals
+    ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```copy
+    yarn add @tarvis/react @tarvis/client preact @preact/signals
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+## Basic Usage
+
+```tsx copy
+import { ChatUI, useChat, model } from '@tarvis/react'
+import { model_gpt_4, model_gpt_3_5_turbo } from '@tarvis/client'
+import '@tarvis/client/dist/index.css'
+
+export default function ChatApp() {
+  const { chatApp } = useChat({
+    endpoint: 'http://localhost:3000/chat',
+    model: model_gpt_4.id,
+    availableModels: [
+      model_gpt_4,
+      model_gpt_3_5_turbo
+    ]
+  })
+
+  return <>
+    <div>
+      <ChatUI ChatUIApp={chatApp} />
+    </div>
+  </>
+}
+```
+
+## Styles
+
+The Tarvis UI component is a responsive component. In order to keep flexibility for implementers, it does not ship with a fixed height.
+Therefore, you need to set the height of the container element to whatever value fits your use case. For a full-screen chat,
+this should do:
+
+```css copy
+.tarvis-react-wrapper {
+  height: 100vh;
+}
+```
+
+## Custom components
+
+The UI component can be customized by passing custom components to the `ChatUI` component. For example:
+
+### Example
+
+```tsx copy
+import { ChatUI, useChat, model } from '@tarvis/react'
+import { model_gpt_4, model_gpt_3_5_turbo } from '@tarvis/client'
+import '@tarvis/client/dist/index.css'
+
+function AssistantMessage({ contentToShow }: {contentToShow: string}) {
+  return (
+    <div className="ck__message-content">
+      <p>🤖{contentToShow}</p>
+    </div>
+  );
+}
+
+const customComponents = {
+  AssistantMessage
+}
+
+export default function ChatApp() {
+  const { chatApp } = useChat({
+    endpoint: 'http://localhost:3000/chat',
+    model: 'mock-gpt-3.5',
+    availableModels: [
+      model_gpt_4,
+      model_gpt_3_5_turbo
+    ]
+  })
+
+  return <>
+    <div>
+      <ChatUI ChatUIApp={chatApp} customComponents={customComponents} />
+    </div>
+  </>
+}
+```
+
+### Custom components API
+
+| Component Name     | Props                           |
+|--------------------|---------------------------------|
+| `AssistantMessage` | See AssistantMessageProps below |
+| `UserMessage`      | `{ message:  UserMessage }`     |
+
+#### UserMessage & AssistantMessageProps
+
+```ts copy
+interface UserMessage extends Message<'user'> {}
+
+type AssistantMessageProps = {
+  message: AssistantMessage;
+  isLoading: boolean;
+  messageVersions: { [key: string]: number };
+  onVersionChange: (messageId: string, newIndex: number) => void;
+  onRetry: (message: AssistantMessage) => void;
+};
+
+export interface AssistantMessage extends Message<'assistant'> {
+  currentlySelectedVersionIndex?: number;
+  usage_metadata?: {
+    input_tokens?: number;
+    output_tokens?: number;
+    total_tokens?: number;
+  };
+}
+
+export interface Message<T extends 'user' | 'assistant' | 'system'> {
+  id: string;
+  type: T;
+  timestamp: Date;
+  content: string[];
+}
+```
