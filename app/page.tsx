@@ -102,11 +102,11 @@ export default function Page() {
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">Ready to build your AI chat?</h2>
-          <p className="text-blue-100 mb-12 max-w-2xl mx-auto text-lg">
-            Join thousands of developers who are already building amazing AI-powered applications.
-          </p>
+          {/*<p className="text-blue-100 mb-12 max-w-2xl mx-auto text-lg">*/}
+          {/*  Join thousands of developers who are already building amazing AI-powered applications.*/}
+          {/*</p>*/}
           <Link
-            href="/signup"
+            href="/docs"
             className="inline-flex items-center justify-center px-8 py-4 font-bold text-blue-600 transition-all duration-200 ease-in-out transform bg-white rounded-xl hover:scale-105 hover:shadow-lg"
           >
             Start Building Now
