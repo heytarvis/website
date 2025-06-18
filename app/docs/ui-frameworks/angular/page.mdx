@@ -1,0 +1,141 @@
+# Angular Integration
+
+Tarvis provides first-class support for Angular applications. This guide will help you integrate Tarvis into your Angular project.
+
+> [!NOTE]
+>
+> Please note that this page only deals with setting up- and customizing the UI. For hooking it
+> up to your backend, please refer to the [guide for getting started](/docs).
+
+## Installation
+
+import { Tabs } from 'nextra/components';
+
+<Tabs items={['npm', 'pnpm', 'yarn']}>
+  <Tabs.Tab>
+    ```bash copy
+    npm i @tarvis/angular @tarvis/client
+    ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```bash copy
+    pnpm add @tarvis/angular @tarvis/client preact @preact/signals
+    ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```bash copy
+    yarn add @tarvis/angular @tarvis/client preact @preact/signals
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+## Basic Usage
+
+```ts copy
+// app.component.ts
+import {Component} from '@angular/core';
+import {RouterOutlet} from '@angular/router';
+import {ChatUI, ChatApp, createChatUIContext} from '@tarvis/angular';
+import {model_claude_3_5_sonnet, model_gpt_3_5_turbo} from '@tarvis/client';
+import '@tarvis/client/dist/index.css';
+
+@Component({
+  selector: 'app-root',
+  imports: [RouterOutlet, ChatUI],
+  templateUrl: './app.component.html',
+  standalone: true,
+  styleUrl: './app.component.css'
+})
+export class AppComponent {
+  title = 'basic';
+
+  chatUIContext = createChatUIContext({
+    endpoint: 'http://localhost:4000/chat',
+    availableModels: [
+      model_gpt_3_5_turbo,
+      model_claude_3_5_sonnet
+    ],
+    model: model_gpt_3_5_turbo.id
+  })
+
+  chatApp = new ChatApp(this.chatUIContext);
+}
+```
+
+```html copy
+<!-- app.component.html -->
+<main class="main">
+  <div class="content">
+    <chat-ui style="width: 100%" [chatUI]="chatApp" [chatUiContext]="chatUIContext"></chat-ui>
+  </div>
+</main>
+```
+
+## Styles
+
+The Tarvis UI component is a responsive component. In order to keep flexibility for implementers, it does not ship with a fixed height.
+Therefore, you need to set the height of the container element to whatever value fits your use case. For a full-screen chat,
+this should do:
+
+```css copy
+.ng-tarvis-wrapper {
+  height: 100vh;
+}
+```
+
+## Custom components
+
+The UI component can be customized by passing custom components to the `ChatUI` component. For example:
+
+### Example
+
+```html copy
+<main class="main">
+  <div class="content">
+    <chat-ui style="width: 100%" [chatUI]="chatApp" [chatUiContext]="chatUIContext">
+      <ng-template #UserMessage let-arg>
+        <div style="background-color: #d6c5ea; border: 2px solid #856dc0; height: 100%; width: 100%;border-radius: 5px;padding: 5px">
+          <div>{{ arg.message?.content[0] }}</div>
+        </div>
+      </ng-template>
+    </chat-ui>
+  </div>
+</main>
+```
+
+### Custom components API
+
+| Component Name     | Props                           |
+|--------------------|---------------------------------|
+| `AssistantMessage` | See AssistantMessageProps below |
+| `UserMessage`      | `{ message:  UserMessage }`     |
+
+#### UserMessage & AssistantMessageProps
+
+```ts copy
+interface UserMessage extends Message<'user'> {}
+
+type AssistantMessageProps = {
+  message: AssistantMessage;
+  isLoading: boolean;
+  messageVersions: { [key: string]: number };
+  onVersionChange: (messageId: string, newIndex: number) => void;
+  onRetry: (message: AssistantMessage) => void;
+};
+
+export interface AssistantMessage extends Message<'assistant'> {
+  currentlySelectedVersionIndex?: number;
+  usage_metadata?: {
+    input_tokens?: number;
+    output_tokens?: number;
+    total_tokens?: number;
+  };
+}
+
+export interface Message<T extends 'user' | 'assistant' | 'system'> {
+  id: string;
+  type: T;
+  timestamp: Date;
+  content: string[];
+}
+```
