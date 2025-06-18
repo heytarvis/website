@@ -1,5 +1,6 @@
 'use client';
 import { ChatUI, useChat } from '@tarvis/react'
+import {useEffect} from "react";
 
 export default function ChatApp() {
   const { chatApp, chatAppContext } = useChat({
@@ -23,6 +24,15 @@ export default function ChatApp() {
       }
     ]
   })
+
+  useEffect(() => {
+    // Simulate loading state for the chat app
+    chatAppContext.isLoading.value = true
+
+    setTimeout(() => {
+      chatAppContext.isLoading.value = false
+    }, 1800)
+  }, []);
 
   return <>
     <div className="max-w-[1000px] max-h-[1000px] mx-auto border-4 border-gray-200 rounded-xl overflow-hidden">
