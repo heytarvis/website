@@ -8,12 +8,12 @@ export default function Page() {
       <div className="relative">
         {/* Background decoration */}
         <div className="absolute inset-0">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob"></div>
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-yellow-300 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-yellow-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20 text-center">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-20 text-center">
           <div className="inline-block mb-8">
             <span className="inline-flex items-center px-4 py-1.5 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
               🚀 Now in Beta
@@ -37,7 +37,7 @@ export default function Page() {
               </svg>
             </Link>
             <Link
-              href="/github"
+              href="https://github.com/heytarvis/tarvis"
               className="group relative inline-flex items-center justify-center px-8 py-4 font-bold text-gray-700 transition-all duration-200 ease-in-out transform bg-white rounded-xl hover:scale-105 hover:shadow-lg border border-gray-200"
             >
               <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
@@ -63,7 +63,7 @@ export default function Page() {
                 </svg>
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Frontend Flexibility</h3>
-              <p className="text-gray-600 leading-relaxed">Build with your favorite framework - Vue, React, or Angular. Fully customizable UI components with modern design patterns.</p>
+              <p className="text-gray-600 leading-relaxed">Use your preferred framework - Vue, React, or Angular. Simple, clean UI components that you can customize to your liking.</p>
             </div>
           </div>
 
@@ -75,8 +75,8 @@ export default function Page() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Robust Backend</h3>
-              <p className="text-gray-600 leading-relaxed">Scalable architecture with built-in authentication, rate limiting, and API management. Ready for production.</p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Simple Backend</h3>
+              <p className="text-gray-600 leading-relaxed">Easy-to-use API which abstracts away the details of various AI model providers.</p>
             </div>
           </div>
 
@@ -88,8 +88,8 @@ export default function Page() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Smart Persistence</h3>
-              <p className="text-gray-600 leading-relaxed">Efficient data storage with automatic caching, indexing, and real-time synchronization. Never lose a conversation.</p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Local Storage</h3>
+              <p className="text-gray-600 leading-relaxed">Keep your chat history in the browser. Simple and effective for most use cases.</p>
             </div>
           </div>
         </div>

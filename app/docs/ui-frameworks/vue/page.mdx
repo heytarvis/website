@@ -1,0 +1,150 @@
+# Vue Integration
+
+Tarvis provides first-class support for Vue applications. This guide will help you integrate Tarvis into your Vue project.
+
+> [!NOTE]
+>
+> Please note that this page only deals with setting up- and customizing the UI. For hooking it
+> up to your backend, please refer to the [guide for getting started](/docs).
+
+## Installation
+
+import { Tabs } from 'nextra/components';
+
+<Tabs items={['npm', 'pnpm', 'yarn']}>
+  <Tabs.Tab>
+    ```bash copy
+    npm i @tarvis/vue @tarvis/client
+    ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```bash copy
+    pnpm add @tarvis/vue @tarvis/client preact @preact/signals
+    ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```bash copy
+    yarn add @tarvis/vue @tarvis/client preact @preact/signals
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+## Basic usage
+
+```vue copy
+<script setup lang="ts">
+import '@tarvis/client/dist/index.css'
+import { ChatUI, ChatUIApp, createChatUIContext } from '@tarvis/vue'
+import {shallowRef} from "vue";
+
+const chatContext = shallowRef(createChatUIContext({
+  endpoint: 'http://localhost:3001/chat',
+  systemPrompt: 'You are a helpful assistant that renders HTML formatted messages',
+  onMessageComplete: (message) => {
+    console.log('Message completed:', message);
+  },
+}))
+const chatApp = shallowRef(new ChatUIApp(chatContext.value))
+</script>
+
+<template>
+  <ChatUI :chat-ui-app="chatApp" />
+</template>
+```
+
+## Styles
+
+The Tarvis UI component is a responsive component. In order to keep flexibility for implementers, it does not ship with a fixed height.
+Therefore, you need to set the height of the container element to whatever value fits your use case. For a full-screen chat,
+this should do:
+
+```css copy
+.tarvis-vue-wrapper {
+  height: 100vh;
+}
+```
+
+## Custom components
+
+The UI component can be customized by passing custom components to the `ChatUI` component. For example:
+
+### Example
+
+```vue copy
+<script setup lang="ts">
+// AssistantMessage.vue
+const props = defineProps({
+  contentToShow: {
+    type: String,
+    required: true
+  }
+})
+</script>
+
+<template>
+  <div>
+    🤖 {{ contentToShow }}
+  </div>
+</template>
+
+```
+
+```vue copy
+<script setup lang="ts">
+import '@tarvis/client/dist/index.css'
+import { ChatUI, ChatUIApp, createChatUIContext } from '@tarvis/vue'
+import {shallowRef} from "vue";
+import AssistantMessage from "./AssistantMessage.vue";
+
+const chatContext = shallowRef(createChatUIContext({
+  endpoint: 'http://localhost:3000/chat',
+  systemPrompt: 'You are a helpful assistant that renders HTML formatted messages',
+  onMessageComplete: (message) => {
+    console.log('Message completed:', message);
+  },
+}))
+const chatApp = shallowRef(new ChatUIApp(chatContext.value))
+</script>
+
+<template>
+  <ChatUI :chat-ui-app="chatApp" :custom-components="{ AssistantMessage }" />
+</template>
+```
+
+### Custom components API
+
+| Component Name     | Props                           |
+|--------------------|---------------------------------|
+| `AssistantMessage` | See AssistantMessageProps below |
+| `UserMessage`      | `{ message:  UserMessage }`     |
+
+#### UserMessage & AssistantMessageProps
+
+```ts copy
+interface UserMessage extends Message<'user'> {}
+
+type AssistantMessageProps = {
+  message: AssistantMessage;
+  isLoading: boolean;
+  messageVersions: { [key: string]: number };
+  onVersionChange: (messageId: string, newIndex: number) => void;
+  onRetry: (message: AssistantMessage) => void;
+};
+
+export interface AssistantMessage extends Message<'assistant'> {
+  currentlySelectedVersionIndex?: number;
+  usage_metadata?: {
+    input_tokens?: number;
+    output_tokens?: number;
+    total_tokens?: number;
+  };
+}
+
+export interface Message<T extends 'user' | 'assistant' | 'system'> {
+  id: string;
+  type: T;
+  timestamp: Date;
+  content: string[];
+}
+```
+

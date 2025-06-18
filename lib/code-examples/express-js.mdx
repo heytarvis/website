@@ -1,0 +1,18 @@
+```ts copy
+import {
+  TarvisClient,
+} from '@tarvis/server';
+import dotenv from 'dotenv';
+import { Readable } from 'node:stream';
+import express, { Request, Response } from 'express';
+
+const app = express();
+dotenv.config(); // your server needs to access your environment variables
+
+const tarvisClient = new TarvisClient();
+
+app.post('/chat', async (req: Request, res: Response) => {
+  const stream = await tarvisClient.streamChatResponse(req.body);
+  Readable.fromWeb(stream).pipe(res);
+});
+```

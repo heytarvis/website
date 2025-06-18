@@ -15,7 +15,7 @@ export const metadata = {
 // const banner = <Banner storageKey="some-key">Nextra 4.0 is released 🎉</Banner>
 const navbar = (
   <Navbar
-    logo={<><Image src={'/tarvis-logo.png'} width={120} height={80} alt={'Tarvis logo'} /></>}
+    logo={<><Image src={'/tarvis_logo.png'} width={120} height={80} alt={'Tarvis logo'} /></>}
     // ... Your additional navbar options
   />
 )

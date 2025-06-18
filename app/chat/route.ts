@@ -28,38 +28,8 @@ const tarvis = new TarvisClient({
 
 export async function POST(req: NextRequest) {
   try {
-    const body = await req.json()
-    const encoder = new TextEncoder();
-    const stream = new ReadableStream({
-      async start(controller) {
-        const sendChunk = (data: any) => {
-          controller.enqueue(encoder.encode(data));
-        };
-
-        try {
-          await tarvis.streamChatResponse(
-            body,
-            ((chunk) => {
-              console.log('sending chunk', chunk)
-              sendChunk(chunk);
-            }) as OnChunkCallback,
-            ((complete) => {
-              sendChunk(complete);
-              controller.close();
-            }) as OnCompleteCallback,
-            ((error) => {
-              sendChunk(error);
-              controller.close();
-            }) as OnErrorCallback
-          )
-        } catch (error) {
-          sendChunk({ type: 'error', error: 'Stream error' });
-          controller.close();
-        }
-      }
-    });
-
-    return new Response(stream)
+    const body = await req.json();
+    return new Response(await tarvis.streamChatResponse(body));
   } catch (error) {
     console.error('Error handling chat request:', error)
     return new Response(

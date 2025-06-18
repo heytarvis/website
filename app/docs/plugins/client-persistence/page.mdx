@@ -1,0 +1,50 @@
+# Client persistence plugin
+
+Preserve chat history in the browser, by using an IndexedDB database.
+
+## Installation
+
+import { Tabs } from 'nextra/components';
+
+<Tabs items={['npm', 'pnpm', 'yarn']}>
+  <Tabs.Tab>
+    ```bash copy
+    npm i @tarvis/client-persistence
+    ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```bash copy
+    pnpm add @tarvis/client-persistence
+    ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```bash copy
+    yarn add @tarvis/client-persistence
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+## Basic Usage
+
+```ts copy
+import {
+  createChatUIContext,
+  ChatUI,
+} from '@tarvis/client';
+import PersistencePlugin from '@tarvis/client-persistence';
+
+import '@tarvis/client/dist/index.css'
+
+const config = {
+  // other config
+  plugins: [new PersistencePlugin()]
+};
+
+const ctx = createChatUIContext(config);
+
+const chatUI = new ChatUI(ctx);
+const chatEl = document.getElementById('app');
+chatUI.render(chatEl);
+```
+
+

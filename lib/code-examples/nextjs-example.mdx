@@ -1,0 +1,13 @@
+```ts copy
+// app/chat/route.ts
+import { NextRequest } from 'next/server'
+import { TarvisClient } from '@tarvis/server'
+
+const tarvis = new TarvisClient()
+
+export async function POST(req: NextRequest) {
+  const body = await req.json();
+  return new Response(await tarvis.streamChatResponse(body));
+}
+
+```
