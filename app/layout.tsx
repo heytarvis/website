@@ -6,6 +6,7 @@ import './globals.css'
 import Image from "next/image";
 import '@tarvis/client/dist/index.css'
 import React from "react";
+import Script from "next/script"
 
 export const metadata = {
   // Define your metadata here
@@ -45,6 +46,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     >
       {children}
     </Layout>
+    <Script data-domain={'tarvis.de'} src={'https://analytics.schedule-x.com/js/script.js'} defer/>
     </body>
     </html>
   )
