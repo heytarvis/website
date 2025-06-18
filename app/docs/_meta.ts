@@ -12,6 +12,12 @@ const meta: MetaRecord = {
     theme: {
       layout: 'default',
     }
+  },
+  plugins: {
+    title: 'Plugins',
+    theme: {
+      layout: 'default',
+    }
   }
 }
 

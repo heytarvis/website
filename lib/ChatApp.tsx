@@ -2,7 +2,7 @@
 import { ChatUI, useChat } from '@tarvis/react'
 
 export default function ChatApp() {
-  const { chatApp } = useChat({
+  const { chatApp, chatAppContext } = useChat({
     endpoint: 'http://localhost:3000/chat',
     model: 'mock-gpt-3.5',
     availableModels: [
