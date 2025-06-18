@@ -46,7 +46,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     >
       {children}
     </Layout>
-    <Script data-domain={'tarvis.de'} src={'https://analytics.schedule-x.com/js/script.js'} defer/>
+    <Script data-domain={'tarvis.dev'} src={'https://analytics.schedule-x.com/js/script.js'} defer/>
     </body>
     </html>
   )
