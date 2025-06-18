@@ -6,6 +6,9 @@ const meta: MetaRecord = {
   },
   'vue': {
     title: 'Vue',
+  },
+  'angular': {
+    title: 'Angular',
   }
 }
 

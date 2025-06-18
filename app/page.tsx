@@ -20,7 +20,7 @@ export default function Page() {
             </span>
           </div>
           <h1 className="text-6xl md:text-7xl font-bold text-gray-900 mb-8 leading-tight">
-            Your AI Chat, Your Stack
+            Your AI Chat. Entire stack.
             <span className="block text-blue-600 mt-2">One Library</span>
           </h1>
           <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
